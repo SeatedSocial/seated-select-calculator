@@ -37,7 +37,7 @@ export default function CostOfDelayCalculator() {
           {prefix}{value.toLocaleString()}{suffix}
         </span>
       </div>
-      <div style={{ position: "relative", height: 20, display: "flex", alignItems: "center" }}>
+      <div style={{ position: "relative", height: 44, display: "flex", alignItems: "center" }}>
         {/* Track */}
         <div style={{ position: "absolute", left: 0, right: 0, height: 6, background: "#1e293b", borderRadius: 99 }}>
           <div style={{
@@ -50,24 +50,22 @@ export default function CostOfDelayCalculator() {
         {/* Custom thumb */}
         <div style={{
           position: "absolute",
-          left: `calc(${((value - min) / (max - min)) * 100}% - 18px)`,
+          left: `calc(${((value - min) / (max - min)) * 100}% - 20px)`,
           transition: "left 0.15s ease",
-          width: 36, height: 20,
+          width: 40, height: 32,
           background: "#FF00CC",
-          borderRadius: 6,
+          borderRadius: 8,
           display: "flex", alignItems: "center", justifyContent: "center",
-          gap: 3,
-          boxShadow: "0 0 12px #FF00CC88",
+          gap: 4,
+          boxShadow: "0 0 14px #FF00CC99",
           pointerEvents: "none",
           zIndex: 2,
         }}>
-          {/* Left arrow */}
-          <svg width="7" height="10" viewBox="0 0 7 10" fill="none">
-            <path d="M5.5 1L1.5 5L5.5 9" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg width="8" height="12" viewBox="0 0 7 10" fill="none">
+            <path d="M5.5 1L1.5 5L5.5 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          {/* Right arrow */}
-          <svg width="7" height="10" viewBox="0 0 7 10" fill="none">
-            <path d="M1.5 1L5.5 5L1.5 9" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg width="8" height="12" viewBox="0 0 7 10" fill="none">
+            <path d="M1.5 1L5.5 5L1.5 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
         <input
@@ -75,7 +73,8 @@ export default function CostOfDelayCalculator() {
           onChange={e => onChange(Number(e.target.value))}
           style={{
             position: "absolute", inset: 0, width: "100%", height: "100%",
-            opacity: 0, cursor: "grab", margin: 0, zIndex: 3
+            opacity: 0, cursor: "grab", margin: 0, zIndex: 3,
+            touchAction: "none"
           }}
         />
       </div>
@@ -221,24 +220,29 @@ export default function CostOfDelayCalculator() {
               </div>
             </div>
           </div>
-
-          {/* CTA */}
-          <div style={{ textAlign: "center", paddingTop: 4 }}>
-            <div style={{ fontSize: 12, color: "#334155", marginBottom: 8 }}>
-              Ready to stop the bleed?
-            </div>
-            <div style={{
-              display: "inline-block",
-              background: "linear-gradient(135deg, #FF00CC, #cc0099)",
-              color: "#fff", fontWeight: 700, fontSize: 14,
-              padding: "12px 28px", borderRadius: 99,
-              fontFamily: "'DM Sans', sans-serif",
-              letterSpacing: 0.5,
-              boxShadow: "0 4px 20px #FF00CC44"
-            }}>
-              Get a Seated Select Demo →
-            </div>
-            <div style={{ fontSize: 11, color: "#1e293b", marginTop: 8 }}>seatedselect.com</div>
+{/* CTA */}
+<div style={{ textAlign: "center", paddingTop: 4 }}>
+  <div style={{ fontSize: 12, color: "#334155", marginBottom: 8 }}>
+    Ready to stop the bleed?
+  </div>
+  
+    <a href="https://calendly.com/seated-social/30min"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      background: "linear-gradient(135deg, #FF00CC, #cc0099)",
+      color: "#fff", fontWeight: 700, fontSize: 14,
+      padding: "12px 28px", borderRadius: 99,
+      fontFamily: "'DM Sans', sans-serif",
+      letterSpacing: 0.5,
+      textDecoration: "none",
+      boxShadow: "0 4px 20px #FF00CC44"
+    }}>
+    Get a Seated Select Demo →
+  </a>
+  <div style={{ fontSize: 11, color: "#1e293b", marginTop: 8 }}>seatedselect.com</div>
+</div>
           </div>
         </div>
       </div>
