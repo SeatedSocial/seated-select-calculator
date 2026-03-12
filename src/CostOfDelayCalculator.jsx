@@ -9,7 +9,6 @@ export default function CostOfDelayCalculator() {
   const [recruiterHourly, setRecruiterHourly] = useState(22);
   const [recruiterHoursOnBadLeads, setRecruiterHoursOnBadLeads] = useState(3);
   const [timeToHire, setTimeToHire] = useState(18);
-  const [animating, setAnimating] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
   const emptyTrucks = Math.round(trucks * (emptyPct / 100));
@@ -38,7 +37,6 @@ export default function CostOfDelayCalculator() {
         </span>
       </div>
       <div style={{ position: "relative", height: 44, display: "flex", alignItems: "center" }}>
-        {/* Track */}
         <div style={{ position: "absolute", left: 0, right: 0, height: 6, background: "#1e293b", borderRadius: 99 }}>
           <div style={{
             position: "absolute", left: 0, top: 0, height: "100%", borderRadius: 99,
@@ -47,7 +45,6 @@ export default function CostOfDelayCalculator() {
             transition: "width 0.15s ease"
           }} />
         </div>
-        {/* Custom thumb */}
         <div style={{
           position: "absolute",
           left: `calc(${((value - min) / (max - min)) * 100}% - 20px)`,
@@ -139,7 +136,6 @@ export default function CostOfDelayCalculator() {
           <h2 style={{ fontSize: 13, color: "#475569", fontFamily: "'DM Mono', monospace", letterSpacing: 1, marginBottom: 28, marginTop: 0 }}>
             YOUR FLEET PROFILE
           </h2>
-
           <Slider label="Total Power Units" value={trucks} min={10} max={500} step={5} onChange={setTrucks} suffix=" trucks" />
           <Slider label="Average Empty Seats (%)" value={emptyPct} min={5} max={40} onChange={setEmptyPct} suffix="%" />
           <Slider label="Weekly Revenue Per Truck" value={revenuePerTruck} min={1500} max={8000} step={100} onChange={setRevenuePerTruck} prefix="$" />
@@ -151,7 +147,7 @@ export default function CostOfDelayCalculator() {
         {/* Results Panel */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 
-          {/* Weekly bleed — hero stat */}
+          {/* Weekly bleed hero stat */}
           <div className="stat-card reveal" style={{
             background: "linear-gradient(135deg, #FF00CC18, #FF00CC08)",
             border: "1px solid #FF00CC44", borderRadius: 16, padding: 28,
@@ -211,7 +207,7 @@ export default function CostOfDelayCalculator() {
             </div>
             <div style={{ fontSize: 13, color: "#86efac", lineHeight: 1.7 }}>
               Pre-qualified drivers arrive with a quality score before your recruiter answers the phone.
-              Your team stops chasing — and starts selecting.
+              Your team stops chasing and starts selecting.
             </div>
             <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid #16a34a22" }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -220,33 +216,37 @@ export default function CostOfDelayCalculator() {
               </div>
             </div>
           </div>
-{/* CTA */}
-<div style={{ textAlign: "center", paddingTop: 4 }}>
-  <div style={{ fontSize: 12, color: "#334155", marginBottom: 8 }}>
-    Ready to stop the bleed?
-  </div>
-  
-    <a href="https://calendly.com/seated-social/30min"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      display: "inline-block",
-      background: "linear-gradient(135deg, #FF00CC, #cc0099)",
-      color: "#fff", fontWeight: 700, fontSize: 14,
-      padding: "12px 28px", borderRadius: 99,
-      fontFamily: "'DM Sans', sans-serif",
-      letterSpacing: 0.5,
-      textDecoration: "none",
-      boxShadow: "0 4px 20px #FF00CC44"
-    }}>
-    
-  </a>
-  <div style={{ fontSize: 11, color: "#1e293b", marginTop: 8 }}>seatedselect.com</div>
-</div>
+
+          {/* CTA */}
+          <div style={{ textAlign: "center", paddingTop: 4 }}>
+            <div style={{ fontSize: 12, color: "#334155", marginBottom: 8 }}>
+              Ready to stop the bleed?
+            </div>
+            <a
+              href="https://calendly.com/seated-social/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                background: "linear-gradient(135deg, #FF00CC, #cc0099)",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: 14,
+                padding: "12px 28px",
+                borderRadius: 99,
+                fontFamily: "'DM Sans', sans-serif",
+                letterSpacing: 0.5,
+                textDecoration: "none",
+                boxShadow: "0 4px 20px #FF00CC44"
+              }}
+            >
+              Get a Seated Select Demo
+            </a>
+            <div style={{ fontSize: 11, color: "#475569", marginTop: 8 }}>seatedselect.com</div>
           </div>
+
         </div>
       </div>
     </div>
   );
 }
-
