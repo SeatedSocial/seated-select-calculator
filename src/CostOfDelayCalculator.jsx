@@ -239,7 +239,7 @@ export default function CostOfDelayCalculator() {
       textDecoration: "none",
       boxShadow: "0 4px 20px #FF00CC44"
     }}>
-    Get a Seated Select Demo →
+    Get a Seated Select Demo ->
   </a>
   <div style={{ fontSize: 11, color: "#1e293b", marginTop: 8 }}>seatedselect.com</div>
 </div>
