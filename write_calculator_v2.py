@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+content = '''import { useState, useEffect } from "react";
 
 const fmt = (n) => "$" + Math.round(n).toLocaleString();
 
@@ -31,8 +31,8 @@ export default function CostOfDelayCalculator() {
   const Slider = ({ label, value, min, max, step = 1, onChange, prefix = "", suffix = "" }) => (
     <div style={{ marginBottom: 24 }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-        <span style={{ fontSize: 13, color: "#94a3b8", fontFamily: "'DM Sans', sans-serif", letterSpacing: 0.3 }}>{label}</span>
-        <span style={{ fontSize: 15, fontWeight: 700, color: "#FF00CC", fontFamily: "'DM Mono', monospace" }}>
+        <span style={{ fontSize: 13, color: "#94a3b8", fontFamily: "\'DM Sans\', sans-serif", letterSpacing: 0.3 }}>{label}</span>
+        <span style={{ fontSize: 15, fontWeight: 700, color: "#FF00CC", fontFamily: "\'DM Mono\', monospace" }}>
           {prefix}{value.toLocaleString()}{suffix}
         </span>
       </div>
@@ -86,7 +86,7 @@ export default function CostOfDelayCalculator() {
     <div style={{
       minHeight: "100vh",
       background: "#020817",
-      fontFamily: "'DM Sans', sans-serif",
+      fontFamily: "\'DM Sans\', sans-serif",
       padding: "40px 20px",
       display: "flex",
       flexDirection: "column",
@@ -95,7 +95,7 @@ export default function CostOfDelayCalculator() {
       width: "100%",
     }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap');
+        @import url(\'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap\');
         html, body { margin: 0; padding: 0; background: #020817; overflow-x: hidden; }
         * { box-sizing: border-box; }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #FF00CC; cursor: pointer; box-shadow: 0 0 10px #FF00CC88; }
@@ -109,7 +109,7 @@ export default function CostOfDelayCalculator() {
         .hero-stat { background: #1a0a14; border: 1px solid rgba(255,0,204,0.3); border-radius: 16px; padding: 28px; text-align: center; }
         .monthly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .breakdown-row { display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center; flex-wrap: wrap; gap: 4px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #FF00CC, #cc0099); color: #fff; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 99px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.5px; text-decoration: none; box-shadow: 0 4px 20px rgba(255,0,204,0.27); }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #FF00CC, #cc0099); color: #fff; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 99px; font-family: \'DM Sans\', sans-serif; letter-spacing: 0.5px; text-decoration: none; box-shadow: 0 4px 20px rgba(255,0,204,0.27); }
         @media (max-width: 700px) {
           .calc-grid { grid-template-columns: 1fr; gap: 16px; }
           .input-panel { padding: 20px 16px; }
@@ -126,12 +126,12 @@ export default function CostOfDelayCalculator() {
           display: "inline-block", background: "rgba(255,0,204,0.08)", border: "1px solid rgba(255,0,204,0.25)",
           borderRadius: 99, padding: "6px 16px", marginBottom: 16
         }}>
-          <span style={{ fontSize: 12, color: "#FF00CC", fontFamily: "'DM Mono', monospace", letterSpacing: 1 }}>
+          <span style={{ fontSize: 12, color: "#FF00CC", fontFamily: "\'DM Mono\', monospace", letterSpacing: 1 }}>
             SEATED SELECT // FLEET CALCULATOR
           </span>
         </div>
         <h1 style={{
-          fontSize: "clamp(26px, 5vw, 42px)", fontFamily: "'Syne', sans-serif",
+          fontSize: "clamp(26px, 5vw, 42px)", fontFamily: "\'Syne\', sans-serif",
           fontWeight: 800, color: "#f8fafc", margin: "0 0 12px", lineHeight: 1.1
         }}>
           What Is Your Recruiting<br />
@@ -144,7 +144,7 @@ export default function CostOfDelayCalculator() {
 
       <div className="calc-grid">
         <div className="input-panel">
-          <h2 style={{ fontSize: 13, color: "#475569", fontFamily: "'DM Mono', monospace", letterSpacing: 1, marginBottom: 28, marginTop: 0 }}>
+          <h2 style={{ fontSize: 13, color: "#475569", fontFamily: "\'DM Mono\', monospace", letterSpacing: 1, marginBottom: 28, marginTop: 0 }}>
             YOUR FLEET PROFILE
           </h2>
           <Slider label="Total Power Units" value={trucks} min={10} max={500} step={5} onChange={setTrucks} suffix=" trucks" />
@@ -157,10 +157,10 @@ export default function CostOfDelayCalculator() {
 
         <div className="results-panel">
           <div className="stat-card reveal hero-stat">
-            <div style={{ fontSize: 12, color: "#FF00CC", fontFamily: "'DM Mono', monospace", letterSpacing: 1, marginBottom: 8 }}>
+            <div style={{ fontSize: 12, color: "#FF00CC", fontFamily: "\'DM Mono\', monospace", letterSpacing: 1, marginBottom: 8 }}>
               BLEEDING PER WEEK
             </div>
-            <div style={{ fontSize: "clamp(36px, 8vw, 52px)", fontWeight: 800, fontFamily: "'Syne', sans-serif", color: "#f8fafc", lineHeight: 1 }}>
+            <div style={{ fontSize: "clamp(36px, 8vw, 52px)", fontWeight: 800, fontFamily: "\'Syne\', sans-serif", color: "#f8fafc", lineHeight: 1 }}>
               {fmt(weeklyBleed)}
             </div>
             <div style={{ fontSize: 12, color: "#64748b", marginTop: 8 }}>revenue loss + recruiter waste</div>
@@ -172,15 +172,15 @@ export default function CostOfDelayCalculator() {
               { label: "ANNUAL COST", value: fmt(totalAnnualBleed), sub: "left on table" },
             ].map(({ label, value, sub }) => (
               <div key={label} className="stat-card" style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 12, padding: 20, textAlign: "center" }}>
-                <div style={{ fontSize: 10, color: "#475569", fontFamily: "'DM Mono', monospace", letterSpacing: 1, marginBottom: 6 }}>{label}</div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: "#f8fafc", fontFamily: "'Syne', sans-serif" }}>{value}</div>
+                <div style={{ fontSize: 10, color: "#475569", fontFamily: "\'DM Mono\', monospace", letterSpacing: 1, marginBottom: 6 }}>{label}</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: "#f8fafc", fontFamily: "\'Syne\', sans-serif" }}>{value}</div>
                 <div style={{ fontSize: 11, color: "#475569", marginTop: 4 }}>{sub}</div>
               </div>
             ))}
           </div>
 
           <div style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 12, padding: 20 }}>
-            <div style={{ fontSize: 11, color: "#475569", fontFamily: "'DM Mono', monospace", letterSpacing: 1, marginBottom: 16 }}>BREAKDOWN</div>
+            <div style={{ fontSize: 11, color: "#475569", fontFamily: "\'DM Mono\', monospace", letterSpacing: 1, marginBottom: 16 }}>BREAKDOWN</div>
             {[
               { label: "Empty trucks (monthly)", value: fmt(monthlyRevenueLost), color: "#f87171" },
               { label: "Recruiter waste (monthly)", value: fmt(recruiterWastePerMonth), color: "#fb923c" },
@@ -189,20 +189,20 @@ export default function CostOfDelayCalculator() {
             ].map(({ label, value, color }) => (
               <div key={label} className="breakdown-row">
                 <span style={{ fontSize: 13, color: "#64748b" }}>{label}</span>
-                <span style={{ fontSize: 14, fontWeight: 700, color, fontFamily: "'DM Mono', monospace" }}>{value}</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color, fontFamily: "\'DM Mono\', monospace" }}>{value}</span>
               </div>
             ))}
           </div>
 
           <div style={{ background: "#061410", border: "1px solid rgba(22,163,74,0.25)", borderRadius: 12, padding: 20 }}>
-            <div style={{ fontSize: 11, color: "#16a34a", fontFamily: "'DM Mono', monospace", letterSpacing: 1, marginBottom: 12 }}>WITH SEATED SELECT</div>
+            <div style={{ fontSize: 11, color: "#16a34a", fontFamily: "\'DM Mono\', monospace", letterSpacing: 1, marginBottom: 12 }}>WITH SEATED SELECT</div>
             <div style={{ fontSize: 13, color: "#86efac", lineHeight: 1.7 }}>
               Pre-qualified drivers arrive with a quality score before your recruiter answers the phone. Your team stops chasing and starts selecting.
             </div>
             <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid rgba(22,163,74,0.12)" }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <span style={{ fontSize: 12, color: "#4ade80" }}>Est. time-to-hire with SS</span>
-                <span style={{ fontSize: 14, fontWeight: 700, color: "#4ade80", fontFamily: "'DM Mono', monospace" }}>{ssTimeToHire} days</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "#4ade80", fontFamily: "\'DM Mono\', monospace" }}>{ssTimeToHire} days</span>
               </div>
             </div>
           </div>
@@ -219,3 +219,8 @@ export default function CostOfDelayCalculator() {
     </div>
   );
 }
+'''
+
+with open("src/CostOfDelayCalculator.jsx", "w") as f:
+    f.write(content)
+print("File written successfully")
